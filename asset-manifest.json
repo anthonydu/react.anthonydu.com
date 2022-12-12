@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react.anthonydu.com/static/css/main.c2d29e96.css",
-    "main.js": "/react.anthonydu.com/static/js/main.d0c69c10.js",
-    "static/js/787.b632fd5e.chunk.js": "/react.anthonydu.com/static/js/787.b632fd5e.chunk.js",
-    "static/media/ncssc.jpg": "/react.anthonydu.com/static/media/ncssc.1ff94cf1472fb972fb8a.jpg",
-    "static/media/ubc.jpg": "/react.anthonydu.com/static/media/ubc.cb43a5c8caaf985ff812.jpg",
-    "index.html": "/react.anthonydu.com/index.html",
-    "main.c2d29e96.css.map": "/react.anthonydu.com/static/css/main.c2d29e96.css.map",
-    "main.d0c69c10.js.map": "/react.anthonydu.com/static/js/main.d0c69c10.js.map",
-    "787.b632fd5e.chunk.js.map": "/react.anthonydu.com/static/js/787.b632fd5e.chunk.js.map"
+    "main.css": "/static/css/main.c2d29e96.css",
+    "main.js": "/static/js/main.7b08d9a0.js",
+    "static/js/787.b632fd5e.chunk.js": "/static/js/787.b632fd5e.chunk.js",
+    "static/media/ncssc.jpg": "/static/media/ncssc.1ff94cf1472fb972fb8a.jpg",
+    "static/media/ubc.jpg": "/static/media/ubc.cb43a5c8caaf985ff812.jpg",
+    "index.html": "/index.html",
+    "main.c2d29e96.css.map": "/static/css/main.c2d29e96.css.map",
+    "main.7b08d9a0.js.map": "/static/js/main.7b08d9a0.js.map",
+    "787.b632fd5e.chunk.js.map": "/static/js/787.b632fd5e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c2d29e96.css",
-    "static/js/main.d0c69c10.js"
+    "static/js/main.7b08d9a0.js"
   ]
 }
