@@ -1,5 +1,6 @@
 import React from "react";
 import "./about.scss";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import ubc from '../images/ubc.jpg';
 import ubcpsych from '../images/ubcpsych.jpg';
@@ -9,7 +10,7 @@ import ncssc from '../images/ncssc.jpg';
 
 const About = () => {
   return (
-    <div className="About">
+    <div className="About" id="About">
       <Container id="about-content">
         <div id="about-header">
           <h1>About Me</h1>

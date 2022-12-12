@@ -1,5 +1,5 @@
 import React from "react";
-import "./bubbles.css";
+import "./bubbles.scss";
 import Sketch from "react-p5";
 import Matter from "matter-js";
 import MatterAttractors from "matter-attractors";

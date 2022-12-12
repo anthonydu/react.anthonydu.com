@@ -1,10 +1,11 @@
 import React from "react";
 import "./contact.scss";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Form, FloatingLabel, Button } from 'react-bootstrap';
 
 const Contact = () => {
   return (
-    <div className="Contact">
+    <div className="Contact" id="Contact">
       <Container id="contact-content">
         <h1>Contact Me</h1>
 

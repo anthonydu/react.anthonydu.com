@@ -10,9 +10,9 @@ const NavBar = () => {
           <a href="/"><b>Anthony Du</b></a>
         </div>
         <div className="nav-spacer"></div>
-        <div className="nav-item"><a href="#home">Home</a></div>
-        <div className="nav-item"><a href="#about">About</a></div>
-        <div className="nav-item"><a href="#contact">Contact</a></div>
+        <div className="nav-item"><a href="#Home">Home</a></div>
+        <div className="nav-item"><a href="#About">About</a></div>
+        <div className="nav-item"><a href="#Contact">Contact</a></div>
         <div className="nav-spacer"></div>
         <div className="nav-item" id="nav-icons">
           <div>
