@@ -1,0 +1,42 @@
+@use "../_variables" as *;
+
+#about-content {
+  max-width: $md-width;
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 35px;
+  text-align: left;
+  margin: 25px 0;
+}
+#about-header {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 35px));
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+#about-header h1 {
+  display: inline-block;
+  background-color: black;
+  padding: 0 5px 0 5px;
+}
+#about-content img {
+  float: left;
+  height: 3rem;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+#about-content h5 {
+  display: inline-block;
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+  #about-content {
+    width: $xs-width;
+  }
+  #skills {
+    font-size: 15px;
+  }
+}

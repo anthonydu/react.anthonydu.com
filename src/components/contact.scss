@@ -1,0 +1,18 @@
+@use "../_variables" as *;
+
+#contact-content {
+  max-width: $md-width;
+}
+
+.form-control, .btn, .form-control:focus, .btn:hover {
+  color: white;
+  font-family: "Iceland";
+  background-color: black;
+  border: 2px solid white;
+}
+
+@media only screen and (max-width: $mobile-breakpoint) {
+  #contact-content {
+    width: $xs-width;
+  }
+}

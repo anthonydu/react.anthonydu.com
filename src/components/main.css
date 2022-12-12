@@ -1,0 +1,11 @@
+.Main > * {
+  height: 100%;
+  background-color: black;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  overflow: hidden;
+}

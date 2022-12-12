@@ -1,0 +1,11 @@
+$nav-height: 75px;
+$nav-font-size: 20px;
+$tablet-breakpoint: 991px;
+$mobile-breakpoint: 575px;
+$height-breakpoint: 650px;
+$md-width: 550px;
+$xs-width: 300px;
+
+@media only screen and (max-width: $mobile-breakpoint) {
+  $nav-font-size: 30px;
+}

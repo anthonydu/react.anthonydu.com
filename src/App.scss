@@ -1,0 +1,21 @@
+@use "src/_variables" as *;
+
+.NavBar {
+  position: fixed;
+  top: 0;
+  height: $nav-height;
+  width: 100%;
+  background-color: black;
+  z-index: 999;
+  border-bottom: 2px solid white;
+}
+
+.Main {
+  height: calc(100vh - #{$nav-height});
+  margin-top: $nav-height;
+  overflow-y: visible;
+}
+
+.Main > * {
+  scroll-margin-top: $nav-height;
+}
