@@ -6,11 +6,11 @@ import Contact from "./Contact";
 
 const Main = () => {
   return (
-    <div className="Main">
+    <main className="Main">
       <Home />
       <About />
       <Contact />
-    </div>
+    </main>
   );
 }
 

@@ -116,9 +116,7 @@ const Bubbles = ({ font, words }) => {
   }
 
   return (
-    <div className="Bubbles">
-      <Sketch className="Sketch" setup={setup} draw={draw} windowResized={windowResized} touchStarted={touchStarted} touchEnded={touchEnded} />
-    </div>
+    <Sketch className="Bubbles" setup={setup} draw={draw} windowResized={windowResized} touchStarted={touchStarted} touchEnded={touchEnded} />
   );
 }
 
