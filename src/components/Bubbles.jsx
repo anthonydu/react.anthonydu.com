@@ -3,7 +3,6 @@ import "./bubbles.scss";
 import Sketch from "react-p5";
 import Matter from "matter-js";
 import MatterAttractors from "matter-attractors";
-import { useEffect } from 'react';
 
 const Bubbles = ({ font, words }) => {
   const Engine = Matter.Engine,
@@ -14,15 +13,17 @@ const Bubbles = ({ font, words }) => {
         Body = Matter.Body,
         Mouse = Matter.Mouse,
         MouseConstraint = Matter.MouseConstraint;
-  let engine;
   let attractiveBody, circleBodies, mouseConstraint;
+  let canvasParent;
 
   function setup(p5, canvasParentRef) {
+    canvasParent = canvasParentRef;
+
     const canvas = p5.createCanvas(canvasParentRef.clientWidth, canvasParentRef.clientHeight);
     canvas.parent(canvasParentRef);
     canvas.style('display', 'block');
 
-    engine = Engine.create();
+    let engine = Engine.create();
     Matter.use(MatterAttractors);
     engine.gravity.scale = 0;
 
@@ -87,13 +88,8 @@ const Bubbles = ({ font, words }) => {
     }
   }
 
-  let canvasParentRef;
-  useEffect(() => {
-    canvasParentRef = document.getElementsByClassName("Sketch")[0];
-  })
-
   function windowResized(p5) {
-    p5.resizeCanvas(canvasParentRef.clientWidth, canvasParentRef.clientHeight);
+    p5.resizeCanvas(canvasParent.clientWidth, canvasParent.clientHeight);
   }
 
   function touchStarted(p5) {
