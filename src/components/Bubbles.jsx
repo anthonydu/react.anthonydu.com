@@ -14,11 +14,8 @@ const Bubbles = ({ font, words }) => {
         Mouse = Matter.Mouse,
         MouseConstraint = Matter.MouseConstraint;
   let attractiveBody, circleBodies, mouseConstraint;
-  let canvasParent;
 
   function setup(p5, canvasParentRef) {
-    canvasParent = canvasParentRef;
-
     const canvas = p5.createCanvas(canvasParentRef.clientWidth, canvasParentRef.clientHeight);
     canvas.parent(canvasParentRef);
     canvas.style('display', 'block');
@@ -89,7 +86,7 @@ const Bubbles = ({ font, words }) => {
   }
 
   function windowResized(p5) {
-    p5.resizeCanvas(canvasParent.clientWidth, canvasParent.clientHeight);
+    p5.resizeCanvas(p5.parent.clientWidth, p5.parent.clientHeight);
   }
 
   function touchStarted(p5) {

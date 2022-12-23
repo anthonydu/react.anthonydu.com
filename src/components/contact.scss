@@ -4,11 +4,13 @@
   max-width: $md-width;
 }
 
-.form-control, .btn, .form-control:focus, .btn:hover {
+.form-control, .form-control:focus, 
+.btn, .btn:hover, .btn:active:hover, .btn:active:focus, .btn:disabled {
   color: white;
   font-family: "Iceland";
   background-color: black;
   border: 2px solid white;
+  transition: opacity 0.15s;
 }
 
 @media only screen and (max-width: $mobile-breakpoint) {

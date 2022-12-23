@@ -1,5 +1,8 @@
 @use "../_variables" as *;
+
 :root {
+  // for use in media query
+  // due to the imperative nature of sass variables
   --navFontSize: #{$nav-font-size};
 }
 
