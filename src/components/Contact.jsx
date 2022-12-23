@@ -1,4 +1,4 @@
-import React, { useState, createRef } from "react";
+import React, { useState, useRef } from "react";
 import "./contact.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Form, FloatingLabel, Button } from 'react-bootstrap';
@@ -11,27 +11,28 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
-  const [time, setTime] = useState("");
   const [isLoading, setLoading] = useState(false);
-  const recaptchaRef = createRef();;
+  const recaptchaRef = useRef();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
-    setTime(new Date().toUTCString());
-    const token = recaptchaRef.current.execute();
+    recaptchaRef.current.execute();
+  }
+
+  const handleChange = (token) => {
     const templateParams = {
       "first-name": fname,
       "last-name": lname,
       "email": email,
       "phone": phone,
       "message": message,
-      "time": time,
+      "time": new Date().toUTCString(),
       "g-recaptcha-response": token
     }; 
     emailjs.send('zoho', 'default_template', templateParams, 'guRHXdfHUTXd64TTc')
       .then((result) => console.log(result.text), (error) => console.log(error.text));
-    setLoading(false)
+    setLoading(false);
   }
 
   return (
@@ -111,8 +112,6 @@ const Contact = () => {
             </Col>
           </Row>
 
-          <input type="hidden" value={time} />
-
           <Row>
             <Col xs={12} className="d-grid">
               <Button 
@@ -127,6 +126,7 @@ const Contact = () => {
                 ref={recaptchaRef}
                 size="invisible"
                 sitekey="6LdcQJ8jAAAAAOvPEHbiNARU5YjZzqdDPUDUb6XV"
+                onChange={handleChange}
               />
             </Col>
           </Row>
