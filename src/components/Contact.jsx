@@ -11,28 +11,36 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [token, setToken] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const recaptchaRef = useRef();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
-    recaptchaRef.current.execute();
+    if (token === null) {
+      recaptchaRef.current.execute();
+    } else {
+      handleChange(token);
+    }
   }
 
   const handleChange = (token) => {
-    const templateParams = {
-      "first-name": fname,
-      "last-name": lname,
-      "email": email,
-      "phone": phone,
-      "message": message,
-      "time": new Date().toUTCString(),
-      "g-recaptcha-response": token
-    }; 
-    emailjs.send('zoho', 'default_template', templateParams, 'guRHXdfHUTXd64TTc')
-      .then((result) => console.log(result.text), (error) => console.log(error.text));
-    setLoading(false);
+    setToken(token);
+    if (token !== null) {
+      const templateParams = {
+        "first-name": fname,
+        "last-name": lname,
+        "email": email,
+        "phone": phone,
+        "message": message,
+        "time": new Date().toUTCString(),
+        "g-recaptcha-response": token
+      }; 
+      emailjs.send('zoho', 'default_template', templateParams, 'guRHXdfHUTXd64TTc')
+        .then((result) => console.log(result.text), (error) => console.log(error.text));
+      setLoading(false);
+    }
   }
 
   return (
