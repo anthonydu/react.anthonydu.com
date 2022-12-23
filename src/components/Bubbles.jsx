@@ -14,8 +14,11 @@ const Bubbles = ({ font, words }) => {
         Mouse = Matter.Mouse,
         MouseConstraint = Matter.MouseConstraint;
   let attractiveBody, circleBodies, mouseConstraint;
+  let canvasParent;
 
-  function setup(p5, canvasParentRef)  {
+  function setup(p5, canvasParentRef) {
+    canvasParent = canvasParentRef;
+
     const canvas = p5.createCanvas(canvasParentRef.clientWidth, canvasParentRef.clientHeight);
     canvas.parent(canvasParentRef);
     canvas.style('display', 'block');
@@ -64,7 +67,6 @@ const Bubbles = ({ font, words }) => {
     Runner.run(runner, engine);
 
     Events.on(engine, "afterUpdate", function() {
-      p5.resizeCanvas(canvasParentRef.clientWidth, canvasParentRef.clientHeight);
       Body.setPosition(attractiveBody, {
         x: canvasParentRef.clientWidth/2,
         y: canvasParentRef.clientHeight/2
@@ -84,6 +86,10 @@ const Bubbles = ({ font, words }) => {
       p5.textFont(font);
       p5.text(words[i], circleBodies[i].position.x, circleBodies[i].position.y);
     }
+  }
+
+  function windowResized(p5) {
+    p5.resizeCanvas(canvasParent.clientWidth, canvasParent.clientHeight);
   }
 
   function touchStarted(p5) {
@@ -106,7 +112,7 @@ const Bubbles = ({ font, words }) => {
   }
 
   return (
-    <Sketch className="Bubbles" setup={setup} draw={draw} touchStarted={touchStarted} touchEnded={touchEnded} />
+    <Sketch className="Bubbles" setup={setup} draw={draw} windowResized={windowResized} touchStarted={touchStarted} touchEnded={touchEnded} />
   );
 }
 
