@@ -5,3 +5,13 @@ $mobile-breakpoint: 575px;
 $height-breakpoint: 650px;
 $md-width: 550px;
 $xs-width: 300px;
+
+:export {
+  navHeight: $nav-height;
+  navFontSize: $nav-font-size;
+  tabletBreakpoint: $tablet-breakpoint;
+  mobileBreakpoint: $mobile-breakpoint;
+  heightBreakpoint: $height-breakpoint;
+  mdWidth: $md-width;
+  xsWidth: $xs-width;
+}
