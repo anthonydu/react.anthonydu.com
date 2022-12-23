@@ -11,17 +11,17 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [btnState, setBtnState] = useState("Submit");
   const [token, setToken] = useState(null);
-  const [isLoading, setLoading] = useState(false);
   const recaptchaRef = useRef();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setLoading(true);
+    setBtnState("Submitting...");
     if (token === null) {
       recaptchaRef.current.execute();
     } else {
-      handleChange(token);
+      setBtnState("Please try again later");
     }
   }
 
@@ -39,8 +39,8 @@ const Contact = () => {
       }; 
       emailjs.send('zoho', 'default_template', templateParams, 'guRHXdfHUTXd64TTc')
         .then((result) => console.log(result.text), (error) => console.log(error.text));
-      setLoading(false);
     }
+    setBtnState("Submit");
   }
 
   return (
@@ -126,9 +126,9 @@ const Contact = () => {
                 type="submit" 
                 size="lg" 
                 name="submit"
-                disabled={isLoading}
+                disabled={btnState !== "Submit"}
               >
-                {isLoading ? 'Submitting…' : 'Submit'}
+                {btnState}
               </Button>
               <ReCAPTCHA
                 ref={recaptchaRef}
