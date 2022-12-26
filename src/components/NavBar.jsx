@@ -5,8 +5,8 @@ import cssVars from "../_variables.scss"
 const NavBar = () => {
   const [menuPressed, setMenuPressed] = useState(false);
   const [navHeight, setNavHeight] = useState(cssVars.navHeight);
-  const [rectLeft, setRectLeft] = useState(null);
-  const [rectWidth, setRectWidth] = useState(null);
+  const [rectLeft, setRectLeft] = useState(0);
+  const [rectWidth, setRectWidth] = useState(0);
 
   useEffect(() => {
     // reset navHeight when window exceeds mobileBreakpoint
