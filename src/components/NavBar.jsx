@@ -5,21 +5,49 @@ import cssVars from "../_variables.scss"
 const NavBar = () => {
   const [menuPressed, setMenuPressed] = useState(false);
   const [navHeight, setNavHeight] = useState(cssVars.navHeight);
+  const [rectLeft, setRectLeft] = useState(null);
+  const [rectWidth, setRectWidth] = useState(null);
 
   useEffect(() => {
-    const handleResize = (() => {
-      if (`${window.innerWidth}px` > cssVars.mobileBreakpoint) {
+    // reset navHeight when window exceeds mobileBreakpoint
+    const handleResize = () => {
+      if (window.innerWidth > parseInt(cssVars.mobileBreakpoint)) {
         setNavHeight(cssVars.navHeight);
         setMenuPressed(false);
       }
-    });
+      setRect();
+    }
+    window.addEventListener("resize", handleResize);
+
+    // handle nav indicatior (rect)
+    const getRectWidth = (currentSection, navItemWidth) => {
+      const snapDistance = 1 - Math.abs(0.5 - currentSection%1) * 2;
+      return document.querySelectorAll(".nav-item a")[Math.round(currentSection) + 1].clientWidth + navItemWidth*0.5 * snapDistance;
+    }
+    const getRectLeft = (currentSection, navItemWidth) => {
+      if (window.innerWidth > parseInt(cssVars.tabletBreakpoint)) {
+        return navItemWidth * (2+currentSection) + (navItemWidth - document.getElementById("rect").clientWidth) * 0.5;
+      }
+      if (window.innerWidth > parseInt(cssVars.mobileBreakpoint)) {
+        return navItemWidth * (1+currentSection) + (navItemWidth - document.getElementById("rect").clientWidth) * 0.5;
+      }
+    }
+    const setRect = () => {
+      const currentSection = document.documentElement.scrollTop / document.getElementsByTagName("main")[0].clientHeight;
+      const navItemWidth = document.getElementsByClassName("nav-item")[0].clientWidth;
+      setRectWidth(getRectWidth(currentSection, navItemWidth));
+      setRectLeft(getRectLeft(currentSection, navItemWidth));
+    }
+    document.dispatchEvent(new Event("scroll"));
+    document.addEventListener("scroll", setRect);
+
+    // reset navHeight when interacting with main
     const handleMain = () => {
       if (menuPressed) {
-        setNavHeight(`calc(${navHeight} / 5)`);
+        setNavHeight(cssVars.navHeight);
         setMenuPressed(false);
       }
     }
-    window.addEventListener("resize", handleResize);
     document.getElementsByTagName("main")[0].addEventListener("wheel", handleMain);
     document.getElementsByTagName("main")[0].addEventListener("mousedown", handleMain);
     document.getElementsByTagName("main")[0].addEventListener("touchstart", handleMain);
@@ -37,7 +65,7 @@ const NavBar = () => {
 
   return (
     <nav className="NavBar" style={{ height: navHeight }}> 
-      <div className="nav-item" id="nav-menu" onClick={handleClick}>
+      <div id="nav-menu" onClick={handleClick}>
         <svg viewBox="0 0 92.833 92.833"><path d="M89.834,1.75H3c-1.654,0-3,1.346-3,3v13.334c0,1.654,1.346,3,3,3h86.833c1.653,0,3-1.346,3-3V4.75 C92.834,3.096,91.488,1.75,89.834,1.75z M89.834,36.75H3c-1.654,0-3,1.346-3,3v13.334c0,1.654,1.346,3,3,3h86.833c1.653,0,3-1.346,3-3V39.75 C92.834,38.096,91.488,36.75,89.834,36.75z M89.834,71.75H3c-1.654,0-3,1.346-3,3v13.334c0,1.654,1.346,3,3,3h86.833c1.653,0,3-1.346,3-3V74.75 C92.834,73.095,91.488,71.75,89.834,71.75z" /></svg>
       </div>
       <div className="nav-item" id="nav-logo">
@@ -57,6 +85,7 @@ const NavBar = () => {
           <a href="https://www.youtube.com/@antdu" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
         </div>
       </div>
+      <svg id="rect" style={{left: `${rectLeft}px`, width: `${rectWidth}px`}}><rect></rect></svg>
     </nav>
   );
 }
