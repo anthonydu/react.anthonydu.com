@@ -17,17 +17,18 @@ const Contact = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setBtnState("Submitting...");
+    setBtnState("Running Captcha...");
     if (token === null) {
       recaptchaRef.current.execute();
-    } else {
-      setBtnState("Please try again later");
     }
   }
 
   const handleChange = (token) => {
     setToken(token);
-    if (token !== null) {
+    if (token === null) {
+      setBtnState("Submit");
+    } else {
+      setBtnState("Submitting...");
       const templateParams = {
         "first-name": fname,
         "last-name": lname,
@@ -39,8 +40,14 @@ const Contact = () => {
       }; 
       emailjs.send('zoho', 'default_template', templateParams, 'guRHXdfHUTXd64TTc')
         .then((result) => console.log(result.text), (error) => console.log(error.text));
+      setBtnState("Submitted!");
     }
-    setBtnState("Submit");
+  }
+
+  const handleClick = () => {
+    if (btnState === "Submitted!") {
+      setBtnState("Please try again later");
+    }
   }
 
   return (
@@ -121,12 +128,12 @@ const Contact = () => {
           </Row>
 
           <Row>
-            <Col xs={12} className="d-grid">
+            <Col xs={12} className="d-grid" onClick={handleClick}>
               <Button 
                 type="submit" 
                 size="lg" 
                 name="submit"
-                disabled={btnState !== "Submit"}
+                disabled={btnState !== "Submit" && btnState !== "Running Captcha..."}
               >
                 {btnState}
               </Button>

@@ -13,7 +13,16 @@ const NavBar = () => {
         setMenuPressed(false);
       }
     });
+    const handleMain = () => {
+      if (menuPressed) {
+        setNavHeight(`calc(${navHeight} / 5)`);
+        setMenuPressed(false);
+      }
+    }
     window.addEventListener("resize", handleResize);
+    document.getElementsByTagName("main")[0].addEventListener("wheel", handleMain);
+    document.getElementsByTagName("main")[0].addEventListener("mousedown", handleMain);
+    document.getElementsByTagName("main")[0].addEventListener("touchstart", handleMain);
   });
 
   const handleClick = () => {
@@ -35,9 +44,9 @@ const NavBar = () => {
         <a href="/"><b>Anthony Du</b></a>
       </div>
       <div className="nav-spacer"></div>
-      <div className="nav-item"><a href="#Home">Home</a></div>
-      <div className="nav-item"><a href="#About">About</a></div>
-      <div className="nav-item"><a href="#Contact">Contact</a></div>
+      <div className="nav-item" onClick={handleClick}><a href="#Home">Home</a></div>
+      <div className="nav-item" onClick={handleClick}><a href="#About">About</a></div>
+      <div className="nav-item" onClick={handleClick}><a href="#Contact">Contact</a></div>
       <div className="nav-spacer"></div>
       <div className="nav-item" id="nav-icons">
         <div>

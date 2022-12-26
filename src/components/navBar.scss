@@ -67,6 +67,7 @@ path {
   .NavBar {
     overflow: hidden;
     display: block;
+    transition: height 0.5s;
   }
   .nav-item {
     height: $nav-height;
