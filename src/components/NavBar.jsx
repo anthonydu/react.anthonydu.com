@@ -38,7 +38,7 @@ const NavBar = () => {
       setRectWidth(getRectWidth(currentSection, navItemWidth));
       setRectLeft(getRectLeft(currentSection, navItemWidth));
     }
-    document.dispatchEvent(new Event("scroll"));
+    setRect();
     document.addEventListener("scroll", setRect);
 
     // reset navHeight when interacting with main
