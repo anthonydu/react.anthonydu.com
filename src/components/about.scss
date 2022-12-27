@@ -1,5 +1,9 @@
 @use "../_variables" as *;
 
+.About a {
+  color: white;
+}
+
 #about-content {
   max-width: $md-width;
   width: 100%;

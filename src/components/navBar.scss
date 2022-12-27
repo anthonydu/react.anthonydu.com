@@ -6,7 +6,7 @@
   --navFontSize: #{$nav-font-size};
 }
 
-a, a:hover {
+.NavBar a, .NavBar a:hover {
   color: white;
   text-decoration: none;
 }
@@ -44,7 +44,7 @@ a, a:hover {
   height: 100%;
   display: block;
 }
-path {
+.NavBar path {
   fill: white;
 }
 #rect {

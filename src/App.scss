@@ -24,3 +24,13 @@
 .Main > * {
   scroll-margin-top: $nav-height;
 }
+
+.Footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 1.2;
+  background-color: black;
+  font-size: small;
+}

@@ -57,6 +57,11 @@ const About = () => {
             </a>
             <p><small>Operations Assistant | Oct '21 - Feb '22</small></p>
           </Col>
+          <Col className="mb-3" sm={6}>
+              <div class="w-100 h-100 d-flex justify-content-center align-items-center border border-white rounded">
+                <h5 class="mb-0">What's next...</h5>
+              </div>
+            </Col>
         </Row>
 
         <Row className="pt-3 d-flex justify-content-center" style={{ borderTop: "1px solid white" }}>
