@@ -5,6 +5,10 @@
   font-family: "Iceland";
 }
 
+.App > * {
+  min-width: $xs-width;
+}
+
 .NavBar {
   position: fixed;
   top: 0;
