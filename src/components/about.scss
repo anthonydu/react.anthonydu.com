@@ -1,7 +1,8 @@
 @use "../_variables" as *;
 
-.About a {
+.About a, .About a:hover {
   color: white;
+  text-decoration: none;
 }
 
 #about-content {
@@ -16,12 +17,8 @@
   position: absolute;
   left: 50%;
   transform: translate(-50%, calc(-50% - 35px));
-  display: flex;
-  justify-content: center;
-  text-align: center;
 }
 #about-header h1 {
-  display: inline-block;
   background-color: black;
   padding: 0 5px 0 5px;
 }
@@ -30,9 +27,6 @@
   height: 3rem;
   margin-right: 10px;
   border-radius: 5px;
-}
-#about-content h5 {
-  display: inline-block;
 }
 
 @media only screen and (max-width: $mobile-breakpoint) {

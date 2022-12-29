@@ -16,14 +16,13 @@
   border: 1px solid #3d3d3d;
   padding: 0 5px;
   position: fixed;
-  white-space: nowrap;
   z-index: 9999;
 }
-a:not(:hover) + .tooltip {
+.Footer a:not(:hover) + #tooltip {
   opacity: 0;
   transition: opacity 1s;
   transition-delay: 0.2s;
 }
-a:hover + .tooltip {
+.Footer a:hover + #tooltip {
   opacity: 1;
 }

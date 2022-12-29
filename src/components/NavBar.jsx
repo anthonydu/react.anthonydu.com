@@ -9,58 +9,55 @@ const NavBar = () => {
   const [rectWidth, setRectWidth] = useState(0);
 
   useEffect(() => {
+    // reset navHeight when interacting with main
+    const resetNav = () => {
+      setNavHeight(cssVars.navHeight);
+      setMenuPressed(false);
+    }
+    document.getElementsByTagName("main")[0].addEventListener("wheel", resetNav);
+    document.getElementsByTagName("main")[0].addEventListener("mousedown", resetNav);
+    document.getElementsByTagName("main")[0].addEventListener("touchstart", resetNav);
+
     // reset navHeight when window exceeds mobileBreakpoint
     const handleResize = () => {
       if (window.innerWidth > parseInt(cssVars.mobileBreakpoint)) {
-        setNavHeight(cssVars.navHeight);
-        setMenuPressed(false);
+        resetNav();
+        setRect();
       }
-      setRect();
     }
     window.addEventListener("resize", handleResize);
 
     // handle nav indicatior (rect)
     const getRectWidth = (currentSection, navItemWidth) => {
       const snapDistance = 1 - Math.abs(0.5 - currentSection%1) * 2;
-      return document.querySelectorAll(".nav-item a")[Math.round(currentSection) + 1].clientWidth + navItemWidth*0.5 * snapDistance;
+      const allLinks = document.querySelectorAll(".nav-item a");
+      const nthLink = Math.round(currentSection) + 1;
+      return allLinks[nthLink].clientWidth + navItemWidth * 0.5 * snapDistance;
     }
     const getRectLeft = (currentSection, navItemWidth) => {
-      if (window.innerWidth > parseInt(cssVars.tabletBreakpoint)) {
-        return navItemWidth * (2+currentSection) + (navItemWidth - document.getElementById("rect").clientWidth) * 0.5;
-      }
-      if (window.innerWidth > parseInt(cssVars.mobileBreakpoint)) {
-        return navItemWidth * (1+currentSection) + (navItemWidth - document.getElementById("rect").clientWidth) * 0.5;
-      }
+      let nthItem;
+      const rectWidth = document.getElementById("rect").clientWidth;
+      const centerOfItem = (navItemWidth - rectWidth) * 0.5;
+      if (window.innerWidth > parseInt(cssVars.tabletBreakpoint)) nthItem = 2 + currentSection;
+      else if (window.innerWidth > parseInt(cssVars.mobileBreakpoint)) nthItem = 1 + currentSection;
+      return navItemWidth * nthItem + centerOfItem;
     }
     const setRect = () => {
-      const currentSection = document.documentElement.scrollTop / document.getElementsByTagName("main")[0].clientHeight;
+      const scrollY = document.documentElement.scrollTop;
+      const mainHeight = document.getElementsByTagName("main")[0].clientHeight;
+      const currentSection = scrollY / mainHeight;
       const navItemWidth = document.getElementsByClassName("nav-item")[0].clientWidth;
       setRectWidth(getRectWidth(currentSection, navItemWidth));
       setRectLeft(getRectLeft(currentSection, navItemWidth));
     }
     setRect();
     document.addEventListener("scroll", setRect);
-
-    // reset navHeight when interacting with main
-    const handleMain = () => {
-      if (menuPressed) {
-        setNavHeight(cssVars.navHeight);
-        setMenuPressed(false);
-      }
-    }
-    document.getElementsByTagName("main")[0].addEventListener("wheel", handleMain);
-    document.getElementsByTagName("main")[0].addEventListener("mousedown", handleMain);
-    document.getElementsByTagName("main")[0].addEventListener("touchstart", handleMain);
   });
 
   const handleClick = () => {
-    if (menuPressed) {
-      setNavHeight(`calc(${navHeight} / 5)`);
-      setMenuPressed(false);
-    } else {
-      setNavHeight(`calc(${navHeight} * 5)`);
-      setMenuPressed(true);
-    }
+    if (window.innerWidth > parseInt(cssVars.mobileBreakpoint)) return;
+    setNavHeight(`calc(${navHeight} ${menuPressed ? "/" : "*"} 5)`); 
+    setMenuPressed(!menuPressed);
   }
 
   return (

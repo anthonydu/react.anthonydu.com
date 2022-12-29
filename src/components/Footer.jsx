@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className="Footer">
       <a href="https://gitfront.io/r/anthonydu/PdAUKDJP67rb/www.anthonydu.com/" onMouseOver={handleMouseOver}>Est.&nbsp;July&nbsp;2021&nbsp;&middot;&nbsp;&copy;&nbsp;2022&nbsp;Anthony&nbsp;Du&nbsp;&middot; Built&nbsp;from&nbsp;the&nbsp;ground&nbsp;up&nbsp;with&nbsp;love&nbsp;&hearts;</a>
-      <div id="tooltip" style={{ top: `${top}px`, left: `${left}px` }}>View source code</div>
+      <div id="tooltip" style={{ top: `${top}px`, left: `${left}px` }}>View&nbsp;source&nbsp;code</div>
     </footer>
   );
 }
