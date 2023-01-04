@@ -1,24 +1,26 @@
 @use "../_variables" as *;
 
 #contact-content {
-  max-width: $md-width;
+  width: $max-width;
 }
-
 .form-control, .form-control:focus, 
-.btn, .btn:hover, .btn:active:hover, .btn:active:focus, .btn:disabled {
+.btn, .btn:disabled, .btn:hover, .btn:active:hover, .btn:active:focus {
   color: white;
   font-family: "Iceland";
   background-color: black;
   border: 2px solid white;
-  transition: opacity 0.15s;
+  transition: opacity 0.5s, box-shadow 0.5s, scale 0.5s;
 }
-
+.form-control:focus, .btn:hover, .btn:active:hover {
+  box-shadow: 0 0 20px 2px rgba(112,20,210);
+  scale: 1.02;
+}
 .grecaptcha-badge { 
   visibility: hidden; 
 }
 
 @media only screen and (max-width: $mobile-breakpoint) {
   #contact-content {
-    width: $xs-width;
+    width: $min-width;
   }
 }

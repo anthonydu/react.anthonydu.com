@@ -4,25 +4,7 @@
   color: white;
   text-decoration: none;
 }
-
-#about-content {
-  max-width: $md-width;
-  width: 100%;
-  border: 2px solid white;
-  border-radius: 10px;
-  padding: 35px;
-  text-align: left;
-}
-#about-header {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, calc(-50% - 35px));
-}
-#about-header h1 {
-  background-color: black;
-  padding: 0 5px 0 5px;
-}
-#about-content img {
+.About img {
   float: left;
   height: 3rem;
   margin-right: 10px;
@@ -30,9 +12,6 @@
 }
 
 @media only screen and (max-width: $mobile-breakpoint) {
-  #about-content {
-    width: $xs-width;
-  }
   #skills {
     font-size: 15px;
   }

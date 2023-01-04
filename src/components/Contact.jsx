@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./contact.scss";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Form, FloatingLabel, Button } from 'react-bootstrap';
+import { Row, Col } from "./grid";
+import FloatingLabel from "./FloatingLabel";
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -51,92 +51,87 @@ const Contact = () => {
   }
 
   return (
-    <div className="Contact" id="Contact">
-      <Container id="contact-content">
+    <section className="Contact" id="Contact">
+      <div id="contact-content">
         <h1>Contact Me</h1>
 
-        <Form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <Row className="mb-3">
             <Col xs={6}>
-              <FloatingLabel label="First Name*">
-                <Form.Control 
-                  type="text" 
-                  name="first-name" 
-                  placeholder="First Name" 
-                  value={fname}
-                  onChange={(e) => setFname(e.target.value)}
-                  required 
-                />
-              </FloatingLabel>
+              <FloatingLabel
+                label="First Name*"
+                type="text" 
+                name="first-name" 
+                placeholder="First Name" 
+                value={fname}
+                onChange={(e) => setFname(e.target.value)}
+                required 
+              />
             </Col>
 
             <Col xs={6}>
-              <FloatingLabel label="Last Name*">
-                <Form.Control 
-                  type="text" 
-                  name="last-name" 
-                  placeholder="Last Name" 
-                  value={lname}
-                  onChange={(e) => setLname(e.target.value)}
-                  required 
-                />
-              </FloatingLabel>
+              <FloatingLabel 
+                label="Last Name*"
+                type="text" 
+                name="last-name" 
+                placeholder="Last Name" 
+                value={lname}
+                onChange={(e) => setLname(e.target.value)}
+                required 
+              />
             </Col>
           </Row>
 
           <Row className="mb-3">
             <Col xs={6}>
-              <FloatingLabel label="Email*">
-                <Form.Control 
-                  type="email" 
-                  name="email" 
-                  placeholder="Email Address" 
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required 
-                />
-              </FloatingLabel>
+              <FloatingLabel 
+                label="Email*"
+                type="email" 
+                name="email" 
+                placeholder="Email Address" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required 
+              />
             </Col>
 
             <Col xs={6}>
-              <FloatingLabel label="Phone">
-                <Form.Control 
-                  type="tel" 
-                  name="phone" 
-                  placeholder="Phone Number" 
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                />
-              </FloatingLabel>
+              <FloatingLabel 
+                label="Phone"
+                type="tel" 
+                name="phone" 
+                placeholder="Phone Number" 
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
             </Col>
           </Row>
 
           <Row className="mb-3">
             <Col xs={12}>
-              <FloatingLabel label="Message*">
-                <Form.Control 
-                  as="textarea" 
-                  style={{ height: "7.5rem", resize: "none" }} 
-                  name="message" 
-                  placeholder="Message" 
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  required
-                />
-              </FloatingLabel>
+              <FloatingLabel 
+                label="Message*"
+                as="textarea" 
+                style={{ height: "7.5rem", resize: "none" }} 
+                name="message" 
+                placeholder="Message" 
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+              />
             </Col>
           </Row>
 
           <Row>
             <Col xs={12} className="d-grid" onClick={handleClick}>
-              <Button 
+              <button 
                 type="submit" 
                 size="lg" 
                 name="submit"
                 disabled={btnState !== "Submit" && btnState !== "Running Captcha..."}
               >
                 {btnState}
-              </Button>
+              </button>
               <ReCAPTCHA
                 ref={recaptchaRef}
                 size="invisible"
@@ -145,9 +140,9 @@ const Contact = () => {
               />
             </Col>
           </Row>
-        </Form>
-      </Container>
-    </div>
+        </form>
+      </div>
+    </section>
   );
 }
 

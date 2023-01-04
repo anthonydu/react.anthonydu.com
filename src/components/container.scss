@@ -1,0 +1,30 @@
+@use "../_variables" as *;
+
+.Container {
+  width: $max-width;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 35px;
+  text-align: left;
+  transition: box-shadow 0.5s, scale 0.5s;
+}
+.Container:hover {
+  box-shadow: 0 0 100px 10px rgba(112,20,210,.5);
+  scale: 1.02;
+}
+.Container .header {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, calc(-100% - 35px));
+  height: 2px;
+  background-color: black;
+  padding: 0 5px;
+}
+.Container .header h1 {
+  transform: translate(0, -55%);
+}
+@media only screen and (max-width: $mobile-breakpoint) {
+  .Container {
+    width: $min-width;
+  }
+}

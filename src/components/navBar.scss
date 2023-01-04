@@ -9,8 +9,11 @@
 .NavBar a, .NavBar a:hover {
   color: white;
   text-decoration: none;
+  transition: scale 0.5s;
 }
-
+.NavBar a:hover {
+  scale: 1.1;
+}
 .NavBar {
   display: flex;
   flex-direction: row;

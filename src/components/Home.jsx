@@ -4,12 +4,12 @@ import Bubbles from "./Bubbles";
 
 const Home = () => {
   return (
-    <div className="Home" id="Home"> 
+    <section className="Home" id="Home"> 
       <Bubbles 
         font={"Iceberg"}
         words={["Fast Learner", "Team Player", "Observant", "Motivated", "Curious", "Creative", "Accountable", "Problem\nSolver", "Adaptable", "Critical\nThinker"]}
       />
-    </div>
+    </section>
   );
 }
 
