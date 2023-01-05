@@ -125,9 +125,8 @@ const Contact = () => {
           <Row>
             <Col span={12} className="d-grid" onClick={handleClick}>
               <button
-                className="btn"
+                className="btn btn-lg"
                 type="submit" 
-                size="lg" 
                 name="submit"
                 disabled={btnState !== "Submit" && btnState !== "Running Captcha..."}
               >
