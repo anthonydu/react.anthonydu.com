@@ -1,7 +1,5 @@
 # www.anthonydu.com
 
-<br>
-
 > ### [R.I.P. Atom](https://github.blog/2022-06-08-sunsetting-atom/) <sub>2014 - 2022</sub>
 >
 > I wrote the first lines of anthonydu.com in Atom.
@@ -10,9 +8,7 @@
 >
 > Rest in spaghetti never forgetti.
 
-<br>
-
-### Courtesy of:
+### Made possible by:
 - [React](https://reactjs.org)
 - [Sass](https://sass-lang.com)
 - [npm](https://www.npmjs.com)
