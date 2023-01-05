@@ -1,10 +1,4 @@
 /*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-*/
-
-/*!
  * matter-attractors 0.1.6 by Liam Brummitt 2017-05-15
  * https://github.com/liabru/matter-attractors
  * License MIT
