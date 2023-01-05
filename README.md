@@ -1,14 +1,14 @@
 # www.anthonydu.com
 
-> ### [R.I.P. Atom](https://github.blog/2022-06-08-sunsetting-atom/) <sub>2014 - 2022</sub>
->
-> I wrote the first lines of anthonydu.com in Atom.
->
-> It's a sad day for the GitHub community.
->
-> Rest in spaghetti never forgetti.
+ > ### [R.I.P. Atom](https://github.blog/2022-06-08-sunsetting-atom/) <sub>2014 - 2022</sub>
+ > I wrote the first lines of anthonydu.com in Atom.
+ > 
+ > It's a sad day for the GitHub community.
+ >
+ > Rest in spaghetti never forgetti.
 
 ### Made possible by:
+
 - [React](https://reactjs.org)
 - [Sass](https://sass-lang.com)
 - [npm](https://www.npmjs.com)
@@ -23,3 +23,7 @@
 - [emailJS](https://www.emailjs.com)
 - [Google Fonts](https://fonts.google.com)
 - [react-google-recaptcha](https://www.npmjs.com/package/react-google-recaptcha)
+
+### Other Versions
+
+[Click here](https://gitfront.io/r/anthonydu/pb9b5nZByKQ6/anthonydu.com-vanilla/) to view the source code for the previous version of this website written in vanilla html/css/js.
