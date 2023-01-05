@@ -57,7 +57,7 @@ const Contact = () => {
 
         <form onSubmit={handleSubmit}>
           <Row className="mb-3">
-            <Col xs={6}>
+            <Col span={6}>
               <FloatingLabel
                 label="First Name*"
                 type="text" 
@@ -69,7 +69,7 @@ const Contact = () => {
               />
             </Col>
 
-            <Col xs={6}>
+            <Col span={6}>
               <FloatingLabel 
                 label="Last Name*"
                 type="text" 
@@ -83,7 +83,7 @@ const Contact = () => {
           </Row>
 
           <Row className="mb-3">
-            <Col xs={6}>
+            <Col span={6}>
               <FloatingLabel 
                 label="Email*"
                 type="email" 
@@ -95,7 +95,7 @@ const Contact = () => {
               />
             </Col>
 
-            <Col xs={6}>
+            <Col span={6}>
               <FloatingLabel 
                 label="Phone"
                 type="tel" 
@@ -108,7 +108,7 @@ const Contact = () => {
           </Row>
 
           <Row className="mb-3">
-            <Col xs={12}>
+            <Col span={12}>
               <FloatingLabel 
                 label="Message*"
                 as="textarea" 
@@ -123,8 +123,9 @@ const Contact = () => {
           </Row>
 
           <Row>
-            <Col xs={12} className="d-grid" onClick={handleClick}>
-              <button 
+            <Col span={12} className="d-grid" onClick={handleClick}>
+              <button
+                className="btn"
                 type="submit" 
                 size="lg" 
                 name="submit"

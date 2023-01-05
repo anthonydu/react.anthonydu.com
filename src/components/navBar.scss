@@ -5,21 +5,25 @@
   // due to the imperative nature of sass variables
   --navFontSize: #{$nav-font-size};
 }
-
-.NavBar a, .NavBar a:hover {
-  color: white;
-  text-decoration: none;
-  transition: scale 0.5s;
-}
-.NavBar a:hover {
-  scale: 1.1;
-}
 .NavBar {
   display: flex;
   flex-direction: row;
   font-size: var(--navFontSize);
   line-height: normal;
+
+  a, a:hover {
+    color: white;
+    text-decoration: none;
+    transition: scale 0.5s;
+  }
+  a:hover {
+    scale: 1.1;
+  }
+  path {
+    fill: white;
+  }
 }
+
 .nav-item, .nav-spacer {
   flex: 1;
   display: flex;
@@ -36,19 +40,17 @@
 #nav-icons {
   justify-content: flex-start;
   min-width: max-content;
-}
-#nav-icons a {
-  display: inline-block;
-  width: var(--navFontSize);
-  height: var(--navFontSize);
-  margin: 0 calc(var(--navFontSize) / 8);
-}
-#nav-icons svg {
-  width: 100%;
-  height: 100%;
-}
-.NavBar path {
-  fill: white;
+
+  a {
+    display: inline-block;
+    width: var(--navFontSize);
+    height: var(--navFontSize);
+    margin: 0 calc(var(--navFontSize) / 8);
+  }
+  svg {
+    width: 100%;
+    height: 100%;
+  }
 }
 #rect {
   position: absolute;
@@ -93,11 +95,12 @@
     top: 0;
     width: $nav-height;
     height: $nav-height;
-  }
-  #nav-menu svg {
-    cursor: pointer;
-    width: calc(var(--navFontSize) / 2);
-    height: calc(var(--navFontSize) / 2);
+
+    svg {
+      cursor: pointer;
+      width: calc(var(--navFontSize) / 2);
+      height: calc(var(--navFontSize) / 2);
+    }
   }
   #rect {
     display: none;

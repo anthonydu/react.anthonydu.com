@@ -1,5 +1,4 @@
 import React from "react";
-import "./floatingLabel.scss";
 
 const FloatingLabel = (props) => {
   const FormControl = props.as === "textarea" ? "textarea" : "input";
@@ -7,7 +6,7 @@ const FloatingLabel = (props) => {
   return (
     <div className="FloatingLabel form-floating">
       <FormControl className="form-control" id={props.name} {...props} />
-      <label for={props.name}>{props.label}</label>
+      <label htmlFor={props.name}>{props.label}</label>
     </div>
   );
 }

@@ -1,18 +1,20 @@
 @use "../_variables" as *;
 
-.About a, .About a:hover {
-  color: white;
-  text-decoration: none;
-}
-.About img {
-  float: left;
-  height: 3rem;
-  margin-right: 10px;
-  border-radius: 5px;
-}
-
-@media only screen and (max-width: $mobile-breakpoint) {
-  #skills {
-    font-size: 15px;
+.About {
+  a, a:hover {
+    color: white;
+    text-decoration: none;
+  }
+  img {
+    float: left;
+    height: 3rem;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  
+  @media only screen and (max-width: $mobile-breakpoint) {
+    #skills {
+      font-size: 15px;
+    }
   }
 }

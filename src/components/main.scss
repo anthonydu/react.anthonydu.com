@@ -9,10 +9,8 @@
   scroll-snap-align: start;
   scroll-snap-stop: always;
   overflow: hidden;
-}
 
-@media only screen and (max-height: $height-breakpoint) {
-  .Main > * {
+  @media only screen and (max-height: $height-breakpoint) {
     height: #{calc($height-breakpoint - $nav-height)};
   }
 }
