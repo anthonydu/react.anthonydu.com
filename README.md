@@ -26,4 +26,4 @@
 
 ### Other Versions
 
-[Click here](https://gitfront.io/r/anthonydu/pb9b5nZByKQ6/anthonydu.com-vanilla/) to view the source code for the previous version of this website written in vanilla html/css/js.
+[Click here](https://gitfront.io/r/anthonydu/pb9b5nZByKQ6/anthonydu.com-vanilla/) to view the source code for the previous version of this website written in vanilla HTML/CSS and Javascript.
