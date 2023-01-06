@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <footer className="Footer">
-      <a href="https://github.com/anthonydu/anthonydu.com-react" onMouseOver={handleMouseOver}>Est.&nbsp;July&nbsp;2021&nbsp;&middot;&nbsp;&copy;&nbsp;2022&nbsp;Anthony&nbsp;Du&nbsp;&middot; Built&nbsp;from&nbsp;the&nbsp;ground&nbsp;up&nbsp;with&nbsp;love&nbsp;&hearts;</a>
+      <a href="https://github.com/anthonydu/anthonydu.com-react" onMouseOver={handleMouseOver}>Est.&nbsp;July&nbsp;2021&nbsp;&middot;&nbsp;&copy;&nbsp;2023&nbsp;Anthony&nbsp;Du&nbsp;&middot; Built&nbsp;from&nbsp;the&nbsp;ground&nbsp;up&nbsp;with&nbsp;love&nbsp;&hearts;</a>
       <div id="tooltip" style={{ top: `${top}px`, left: `${left}px` }}>View&nbsp;source&nbsp;code</div>
     </footer>
   );
