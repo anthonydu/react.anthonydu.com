@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "framer-motion": "^8.2.4",
     "gh-pages": "^4.0.0",
     "matter-attractors": "^0.1.6",
     "matter-js": "^0.18.0",

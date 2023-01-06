@@ -5,7 +5,7 @@
     width: $max-width;
   }
   .form-control, .form-control:focus, 
-  .btn, .btn:disabled, .btn:hover, .btn:active:hover, .btn:active:focus {
+  .btn, .btn:disabled, .btn:hover, .btn:focus {
     color: white;
     font-family: "Iceland";
     background-color: black;
@@ -15,7 +15,7 @@
   .FloatingLabel {
     transition: scale 0.5s;
   }
-  .FloatingLabel:has(.form-control:focus), .btn:hover, .btn:active:hover {
+  .FloatingLabel:has(.form-control:focus), .btn:hover, .btn:focus {
     box-shadow: 0 0 20px 2px rgba(112,20,210);
     scale: 1.02;
   }

@@ -16,6 +16,7 @@
 - [gh-pages](https://www.npmjs.com/package/gh-pages)
 - [jsDelivr](https://www.jsdelivr.com)
 - [Bootstrap](https://getbootstrap.com)
+- [Framer Motion](https://www.framer.com/motion/)
 - [p5.js](https://p5js.org)
 - [react-p5](https://www.npmjs.com/package/react-p5)
 - [Matter.js](https://brm.io/matter-js)

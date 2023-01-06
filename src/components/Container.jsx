@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import "./container.scss";
 
 const Container = ({ header, children }) => {
@@ -21,17 +22,22 @@ const Container = ({ header, children }) => {
   }
 
   return (
-    <div 
+    <motion.div 
       className="Container"
       onMouseMove={(e) => handleHover(e)}
       onMouseLeave={() => handleLeave()}
-      style={{ transform: `translate(${translate.x}px, ${translate.y}px)` }}
+      animate={{ x: translate.x, y: translate.y }}
+      transition={{
+        type: "spring",
+        damping: 100,
+        stiffness: 500
+    }}
     >
       <div className="header">
         <h1>{header}</h1>
       </div>
       {children}
-    </div>
+    </motion.div>
   );
 }
 
