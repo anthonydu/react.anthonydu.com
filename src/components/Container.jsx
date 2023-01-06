@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import "./container.scss";
 
 const Container = ({ header, children }) => {
-  const [translate, setTranslate] = useState({x: 0, y: 0});
+  const [translate, setTranslate] = useState({ x: 0, y: 0 });
 
   const handleHover = (e) => {
     const targetLeft = e.currentTarget.getBoundingClientRect().left;
@@ -14,7 +14,7 @@ const Container = ({ header, children }) => {
     const centerOffsetY = e.clientY - targetTop - halfHeight;
     const translateX = (centerOffsetX / halfWidth) * 10;
     const translateY = (centerOffsetY / halfHeight) * 10;
-    setTranslate({x: translateX, y: translateY});
+    setTranslate({ x: translateX, y: translateY });
   }
 
   const handleLeave = () => {
@@ -31,7 +31,7 @@ const Container = ({ header, children }) => {
         type: "spring",
         damping: 100,
         stiffness: 500
-    }}
+      }}
     >
       <div className="header">
         <h1>{header}</h1>
