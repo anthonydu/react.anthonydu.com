@@ -19,7 +19,7 @@
 - [react-p5](https://github.com/Gherciu/react-p5)
 - [Matter.js](https://brm.io/matter-js)
 - [matter-attractors](https://github.com/liabru/matter-attractors)
-- [emailJS](https://www.emailjs.com)
+- [EmailJS](https://www.emailjs.com)
 - [Google Fonts](https://fonts.google.com)
 - [Google reCAPTCHA](https://www.google.com/recaptcha)
 - [react-google-recaptcha](https://github.com/dozoisch/react-google-recaptcha)
