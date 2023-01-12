@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <footer className="Footer">
-      <a href="https://github.com/anthonydu/anthonydu.com-react" onMouseOver={handleMouseOver}>Est.&nbsp;July&nbsp;2021&nbsp;&middot;&nbsp;&copy;&nbsp;2023&nbsp;Anthony&nbsp;Du&nbsp;&middot; Bootstrapped&nbsp;with&nbsp;Create&nbsp;React&nbsp;App&nbsp;&hearts;</a>
+      <a href="https://github.com/anthonydu/anthonydu.com-react" onMouseOver={handleMouseOver}>Est.&nbsp;July&nbsp;2021&nbsp;&middot;&nbsp;&copy;&nbsp;2023&nbsp;Anthony&nbsp;Du&nbsp;&hearts; Bootstrapped&nbsp;with&nbsp;Create&nbsp;React&nbsp;App</a>
       <div id="tooltip" style={{ top: `${top}px`, left: `${left}px` }}>View&nbsp;GitHub&nbsp;Repository</div>
     </footer>
   );
