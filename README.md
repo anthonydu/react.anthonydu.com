@@ -11,20 +11,19 @@
 
 - [React](https://reactjs.org)
 - [Sass](https://sass-lang.com)
-- [npm](https://www.npmjs.com)
-- [Create React App](https://create-react-app.dev)
-- [gh-pages](https://www.npmjs.com/package/gh-pages)
+- [gh-pages](https://github.com/tschaub/gh-pages)
 - [jsDelivr](https://www.jsdelivr.com)
 - [Bootstrap](https://getbootstrap.com)
 - [Framer Motion](https://www.framer.com/motion/)
 - [p5.js](https://p5js.org)
-- [react-p5](https://www.npmjs.com/package/react-p5)
+- [react-p5](https://github.com/Gherciu/react-p5)
 - [Matter.js](https://brm.io/matter-js)
-- [matter-attractors](https://www.npmjs.com/package/matter-attractors)
+- [matter-attractors](https://github.com/liabru/matter-attractors)
 - [emailJS](https://www.emailjs.com)
 - [Google Fonts](https://fonts.google.com)
-- [react-google-recaptcha](https://www.npmjs.com/package/react-google-recaptcha)
+- [Google reCAPTCHA](https://www.google.com/recaptcha)
+- [react-google-recaptcha](https://github.com/dozoisch/react-google-recaptcha)
 
 ### Other Versions
 
-[Click here](https://gitfront.io/r/anthonydu/pb9b5nZByKQ6/anthonydu.com-vanilla/) to view the source code for the previous version of this website written in vanilla HTML/CSS and Javascript.
+[Click here](https://gitfront.io/r/anthonydu/pb9b5nZByKQ6/anthonydu.com-vanilla/) to view the source code for the previous version of this website written in vanilla HTML/CSS and Javascript on GitFront.
